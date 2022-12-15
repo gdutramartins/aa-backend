@@ -8,13 +8,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Municipio")
+@Table(name = "cad_municipio")
 public class MunicipioEntity {
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "municipio_jpa_sequence_generator")
+	@SequenceGenerator(name="municipio_jpa_sequence_generator", sequenceName = "municipio_id_seq", allocationSize = 1)
 	private Long id;
 	
 	@Column(nullable = false)

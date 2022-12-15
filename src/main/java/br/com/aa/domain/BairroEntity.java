@@ -8,19 +8,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name = "Bairro")
+@Table(name = "cad_bairro")
 public class BairroEntity {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "bairro_jpa_sequence_generator")
+	@SequenceGenerator(name="bairro_jpa_sequence_generator", sequenceName = "bairro_id_seq", allocationSize = 1)
+	
 	private Long id;
 	
 	@Column(nullable = false)
-	private Long codigo;
+	private String codigo;
 	
 	@Column(nullable = false, length = 100)
 	private String nome;
@@ -37,11 +40,11 @@ public class BairroEntity {
 		this.id = id;
 	}
 
-	public Long getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Long codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

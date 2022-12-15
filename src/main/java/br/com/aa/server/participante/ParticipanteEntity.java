@@ -12,14 +12,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Participante")
+@Table(name = "cad_participante")
 public class ParticipanteEntity {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "participante_jpa_sequence_generator")
+	@SequenceGenerator(name="participante_jpa_sequence_generator", sequenceName = "participante_id_seq", allocationSize = 1)
 	private Long id;	
 	
 	@Column(nullable = false)
