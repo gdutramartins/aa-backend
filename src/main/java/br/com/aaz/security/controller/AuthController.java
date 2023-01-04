@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,5 +67,10 @@ public class AuthController {
 		ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
 		return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
 				.body(new MessageDTO("Logoff realizado com sucesso"));
+	}
+	
+	@GetMapping("/echo")
+	public ResponseEntity<?> echo() {
+		return ResponseEntity.ok().body(new MessageDTO("Echo para AAZ"));
 	}
 }
