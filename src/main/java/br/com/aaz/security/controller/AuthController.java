@@ -71,6 +71,6 @@ public class AuthController {
 	
 	@GetMapping("/echo")
 	public ResponseEntity<?> echo() {
-		return ResponseEntity.ok().body(new MessageDTO("Echo para AAZ"));
+		return ResponseEntity.ok().body(new MessageDTO("Novo Echo para AAZ"));
 	}
 }
