@@ -19,13 +19,7 @@ public class AazBackendApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-				.allowedOrigins("http://localhost:4200")
-				.allowedOrigins("https://amigo-azul-front.herokuapp.com")
-				.allowedMethods("*")
-                .maxAge(3600L)
-                .allowedHeaders("*")
-                .exposedHeaders("Authorization")
-                .allowCredentials(true);
+				.allowedOrigins("http://localhost:4200", "https://amigo-azul-front.herokuapp.com");
 			}
 		};
 	}
