@@ -18,9 +18,14 @@ public class AazBackendApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("*")
+				registry.addMapping("/**")
 				.allowedOrigins("http://localhost:4200")
-				.allowedOrigins("https://amigo-azul-front.herokuapp.com");
+				.allowedOrigins("https://amigo-azul-front.herokuapp.com")
+				.allowedMethods("*")
+                .maxAge(3600L)
+                .allowedHeaders("*")
+                .exposedHeaders("Authorization")
+                .allowCredentials(true);
 			}
 		};
 	}
