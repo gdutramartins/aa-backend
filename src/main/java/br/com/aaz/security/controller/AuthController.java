@@ -62,6 +62,7 @@ public class AuthController {
 		return ResponseEntity.ok(new MessageDTO("Usuário criado com sucesso"));
 	}
 
+	@CrossOrigin(origins = "https://amigo-azul-front.herokuapp.com")
 	@PostMapping("/signout")
 	public ResponseEntity<?> logoutUser() {
 		ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
