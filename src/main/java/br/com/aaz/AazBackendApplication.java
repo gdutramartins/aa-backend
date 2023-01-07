@@ -20,7 +20,7 @@ public class AazBackendApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 				//.allowedOrigins("https://amigo-azul-front.herokuapp.com")
-				.allowedOriginPatterns("*")
+				.allowedOriginPatterns("https://amigo-azul-front.herokuapp.com")
 				.allowCredentials(true)
 				.allowedMethods("*")
                 .maxAge(3600L);                
