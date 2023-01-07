@@ -11,8 +11,8 @@ public class CorsConfig implements WebMvcConfigurer {
 
 		registry.addMapping("/**")
 				// .allowedOrigins("https://amigo-azul-front.herokuapp.com")
-				.allowedOriginPatterns("https://amigo-azul-front.herokuapp.com").
-				allowCredentials(true)
+				.allowedOriginPatterns("https://amigo-azul-front.herokuapp.com")
+				.allowCredentials(true)
 				.allowedMethods("*")
 				.maxAge(3600L);
 	}
