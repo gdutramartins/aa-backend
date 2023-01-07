@@ -18,7 +18,7 @@ public class AazBackendApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
+				registry.addMapping("https://amigo-azul.herokuapp.com")
 				.allowedOrigins("https://amigo-azul-front.herokuapp.com")
 				.allowedMethods("*")
                 .maxAge(3800L)
