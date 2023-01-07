@@ -31,7 +31,7 @@ public class CorsConfig {
         //corsConfiguration.addAllowedOrigin("*");
         //  Cross domain configuration error , take .allowedOrigins Replace with .allowedOriginPatterns that will do .
         //  Set the domain name that allows cross domain requests 
-        corsConfiguration.addAllowedOriginPattern("*");
+        corsConfiguration.addAllowedOriginPattern("https://amigo-azul-front.herokuapp.com");
         corsConfiguration.addAllowedHeader("*");
         //  Set allowed methods 
         corsConfiguration.addAllowedMethod("*");
