@@ -20,12 +20,10 @@ public class AazBackendApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 				//.allowedOrigins("https://amigo-azul-front.herokuapp.com")
-				.allowedOriginPatterns("*")				
+				.allowedOriginPatterns("*")
+				.allowCredentials(true)
 				.allowedMethods("*")
-                .maxAge(3600L)
-                .allowedHeaders("*")
-                .exposedHeaders("Authorization")
-                .allowCredentials(true);
+                .maxAge(3600L);                
 			}
 		};
 	}
