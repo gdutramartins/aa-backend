@@ -24,7 +24,8 @@ public class AazBackendApplication {
 				.allowedMethods("*")
                 .maxAge(3800L)
                 .allowedHeaders("*")
-                .exposedHeaders("Authorization");
+                .exposedHeaders("Authorization")
+                .allowCredentials(true);
 			}
 		};
 	}
