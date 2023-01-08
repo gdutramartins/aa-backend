@@ -13,7 +13,6 @@ public class ParticipanteController {
 	@Autowired
 	private ParticipanteService participanteService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/participantes")
 	public List<ParticipanteEntity> getParticipantes() {
 		return participanteService.getParticipantes();
