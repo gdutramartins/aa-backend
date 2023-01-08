@@ -36,7 +36,7 @@ public class CorsConfig {
         //  Set allowed methods 
         corsConfiguration.addAllowedMethod("*");
         //  Whether to allow certificates 
-        corsConfiguration.setAllowCredentials(true);
+        //corsConfiguration.setAllowCredentials(true);
         //  Cross domain allow time 
         corsConfiguration.setMaxAge(3600L);
         return corsConfiguration;
