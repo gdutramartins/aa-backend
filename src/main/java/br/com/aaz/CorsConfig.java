@@ -40,6 +40,7 @@ public class CorsConfig {
         corsConfiguration.setAllowCredentials(true);
         //  Cross domain allow time 
         corsConfiguration.setMaxAge(3600L);
+        
         return corsConfiguration;
     }
 
