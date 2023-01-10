@@ -53,6 +53,8 @@ public class JwtUtils {
 				.path("/api")
 				.maxAge(24 * 60 * 60)
 				.httpOnly(true)
+				.secure(true)
+				.sameSite("None")
 				.domain("herokuapp.com")
 				.build();
 		return cookie;
