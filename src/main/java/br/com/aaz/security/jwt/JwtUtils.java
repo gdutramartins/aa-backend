@@ -55,7 +55,7 @@ public class JwtUtils {
 				.httpOnly(true)
 				.secure(true)
 				.sameSite("None")
-				.domain("herokuapp.com")
+				//.domain("herokuapp.com")
 				.build();
 		return cookie;
 	}
